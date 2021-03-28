@@ -25,11 +25,20 @@
         }
         .menu-item:hover {
             background-color: $medium-gray;
+            border-radius: 0;
         }
-        .menu-item:first-child:hover {
+        .menu-item:hover {
             background-color: $medium-gray;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
+        }
+        .score:hover {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+        .faq:hover {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
         }
         .sign {
             display: flex;
