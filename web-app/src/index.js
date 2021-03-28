@@ -1,21 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import './Assets/Common.scss';
 import App from './App';
 import Header from './Components/Header/Header';
-import Auth from './Components/authForm/authForm';
-import FinalTab from './Components/finalTab/finalTab';
-import MainMenu from './Components/mainMenu/mainMenu';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <Header />
-    {/* <Auth /> */}
-    {/* <FinalTab /> */}
-    <MainMenu />
+    
     <App />
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
