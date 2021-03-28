@@ -11,7 +11,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Header />
     <Auth />
-    <MainMenu />
+    {/* <MainMenu /> */}
     <App />
   </React.StrictMode>,
   document.getElementById('root')

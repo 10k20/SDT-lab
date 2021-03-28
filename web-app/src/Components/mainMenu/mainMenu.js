@@ -9,7 +9,7 @@ const MainMenu = () => (
                 <div className='score'>23000</div>
             </div>
             <div className='buttons'>
-                <button className='records'>Records</button>
+                <button className='records button-not-active'>Records</button>
                 <button className='play'>Play</button>
             </div>
         </div>
