@@ -10,17 +10,12 @@
         position:relative;
         flex-direction: column;
         padding: 1rem;
-         
-         .info-requirement{
-          
-        } 
         .inputs{ 
             .reg-input{
                 width:18rem;
                 border-radius: 1px;
                 border-color: rgb(228,228,228);
                 border-width: 1px;
-
             }
              .nick{
                 margin-top: 1rem;
@@ -28,21 +23,17 @@
  
             .first-password{    
                 margin-left:5rem;
-            }
-            .second-password{
-
             }   
         }  
-        
         .buttons{
             display:flex;
             .in-button{
+                border: 1px solid;
                 background-color: white;
                 border-radius: 4px;
                 border-color: rgb(228,228,228);
-                border-width: 2px;
                 box-shadow:0;
-                width:80px;
+                cursor: pointer;
             }
             .cancel-button{
                 padding-right:11.5rem;
