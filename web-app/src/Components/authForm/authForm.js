@@ -6,33 +6,31 @@ const Auth = () => (
         <div className='auth-wrapper'>
             <span className="info-requirement">Введите данные для регистрации</span> 
                 <div className="inputs">
-                    
-                    <div className="nick">
-                        <label>Имя пользователя: </label>
-                        <input type="text" className="reg-input" placeholder="nickname" required />
+                    <div className="login input">
+                        <label>Login: </label>
+                        <input type="text" className="reg-input" placeholder="Login" required />
                     </div>
-                        <br/>
-                        <div className="first-password">
-                            <label>Пароль: </label>
-                            <input type="text" className="reg-input" placeholder="password" required />
+                        <div className="password input">
+                            <label>Password: </label>
+                            <input type="text" className="reg-input" placeholder="Password" required />
                         </div>
-                        <br/>
-                        <div className="second-password">
-                            <label>Повторите пароль: </label>
-                            <input type="text" className="reg-input" placeholder="password" required />
+                        <div className="repeat-password input">
+                            <label>Password again: </label>
+                            <input type="text" className="reg-input" placeholder="Password Again" required />
                         </div>
                 </div>
-                <br/>
                 <div className="buttons">
                     <div className="cancel-button">
-                        <button class="in-button">Cancel</button> 
+                        <button class="in-button button-not-active">Cancel</button> 
                     </div>
-                    <div className="back-button">
-                        <button class="in-button">Back</button> 
+                    <div className="right-buttons">
+                        <div className="back-button">
+                            <button class="in-button button-not-active">Back</button> 
+                        </div>
+                        <div className="signin-button">
+                            <button class="in-button">Sign In</button> 
+                        </div> 
                     </div>
-                    <div className="signin-button">
-                        <button class="in-button">Sign-in</button> 
-                    </div> 
                 </div>
         </div>
     </div>
