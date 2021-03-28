@@ -4,14 +4,16 @@ import './Assets/Common.scss';
 import App from './App';
 import Header from './Components/Header/Header';
 import Auth from './Components/authForm/authForm';
+import FinalTab from './Components/finalTab/finalTab';
 import MainMenu from './Components/mainMenu/mainMenu';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <Header />
-    <Auth />
-    {/* <MainMenu /> */}
+    {/* <Auth /> */}
+    {/* <FinalTab /> */}
+    <MainMenu />
     <App />
   </React.StrictMode>,
   document.getElementById('root')

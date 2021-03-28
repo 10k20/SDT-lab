@@ -4,13 +4,22 @@ import './mainMenu.scss';
 const MainMenu = () => (
     <div className='main-menu'>
         <div className='main-menu-wrapper'>
-            <div className='last-score'>
-                <div className='title'>Your last score:</div>
-                <div className='score'>23000</div>
+            <div className='play menu-item'>
+                <span>Play</span>
             </div>
-            <div className='buttons'>
-                <button className='records button-not-active'>Records</button>
-                <button className='play'>Play</button>
+            <div className='score menu-item'>
+                <span>Scores</span>
+            </div>
+            <div className='faq menu-item'>
+                <span>FAQ</span>
+            </div>
+            <div className='sign'>
+                <div className='sign-up menu-item'>
+                    <span>Sign Up</span>
+                </div>
+                <div className='sign-in menu-item'>
+                    <span>Sign In</span>
+                </div>
             </div>
         </div>
     </div>

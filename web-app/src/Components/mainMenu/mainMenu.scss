@@ -1,42 +1,58 @@
-.main-menu {
+@import '../../Assets/Colors.scss';
+
+.main-menu{
     position: absolute;
-    top: 50%;
     left: 50%;
+    top: 50%;
     transform: translateX(-50%) translateY(-50%);
-    height: 20rem;
-    width: 30rem;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: $light-gray;
     border-radius: 10px;
-    display: flex;
-    color: #000;
-    &-wrapper {
-        width: 100%;
-        position: relative;
-        padding: 2rem;
-        display: flex;
+    &-wrapper{
+        display:flex;
+        position:relative;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        .last-score {
-            margin-bottom: 5rem;
+        text-align: center;
+        width: 14rem;
+        .menu-item {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            .title {
-                font-size: 1.5rem;
-            }
-            .score {
-                margin-top: 0.5rem;
-            }
+            justify-content: center;
+            height: 3rem;
+            border-bottom: 1px solid $medium-gray;
+            cursor: pointer;
         }
-        .login {
-            margin-bottom: 2rem;
+        .menu-item:hover {
+            background-color: $medium-gray;
         }
-        .buttons {
+        .menu-item:first-child:hover {
+            background-color: $medium-gray;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .sign {
             display: flex;
-            justify-content: space-between;
-            width: 10rem;
+            .sign-up {
+                border-bottom: none;
+                width: 50%;
+                border-right: 1px solid $medium-gray;
+            }
+            .sign-up:hover {
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+                border-bottom-left-radius: 10px;
+            }
+            .sign-in {
+                border-bottom: none;
+                width: 50%;
+                background-color: $base-blue;
+                color: #fff;
+                border-bottom-right-radius: 10px;
+            }
+            .sign-in:hover {
+                background-color: $base-blue-hover;
+            }
         }
+        
     }
 }
