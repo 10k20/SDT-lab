@@ -1,7 +1,8 @@
 import { Switch, Route } from 'react-router-dom'
 
 import Snake from './Components/Snake/Snake';
-import Auth from './Components/authForm/authForm';
+import SignUp from './Components/signUp/signUp';
+import SignIn from './Components/signIn/signIn';
 import FinalTab from './Components/finalTab/finalTab';
 import MainMenu from './Components/mainMenu/mainMenu';
 import FAQ from './Components/FAQ/FAQ';
@@ -12,7 +13,8 @@ function App() {
       <Switch>
         <Route exact path='/' component={MainMenu} />
         <Route exact path='/play' component={Snake} />
-        <Route exact path='/auth' component={Auth} />
+        <Route exact path='/sign-up' component={SignUp} />
+        <Route exact path='/sign-in' component={SignIn} />
         <Route exact path='/faq' component={FAQ} />
         <Route exact path='/final' component={FinalTab} />
       </Switch>

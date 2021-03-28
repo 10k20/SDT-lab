@@ -1,6 +1,6 @@
 @import '../../Assets/Colors.scss';
 
-.Auth{
+.sign-up-component{
     position: absolute;
     left: 50%;
     top: 50%;
@@ -8,7 +8,7 @@
     width: 30rem;
     background-color: $light-gray;
     border-radius: 10px;
-    .auth-wrapper{
+    .sign-up-wrapper{
         display:flex;
         position:relative;
         flex-direction: column;

@@ -1,10 +1,11 @@
 import React from 'react';
-import './authForm.scss';
+import { Link } from 'react-router-dom';
+import './signIn.scss';
 
-const Auth = () => (
-    <div className='Auth'>
-        <div className='auth-wrapper'>
-            <span className="info-requirement">Введите данные для регистрации</span> 
+const SignIn = () => (
+    <div className='sign-in-component'>
+        <div className='sign-in-wrapper'>
+            <span className="info-requirement">Введите данные для входа </span> 
                 <div className="inputs">
                     <div className="login input">
                         <label>Login: </label>
@@ -14,14 +15,12 @@ const Auth = () => (
                             <label>Password: </label>
                             <input type="text" className="reg-input" placeholder="Password" required />
                         </div>
-                        <div className="repeat-password input">
-                            <label>Password again: </label>
-                            <input type="text" className="reg-input" placeholder="Password Again" required />
-                        </div>
                 </div>
                 <div className="buttons">
                     <div className="cancel-button">
-                        <button class="in-button button-not-active">Cancel</button> 
+                        <Link to='/'>
+                            <button class="in-button button-not-active">Cancel</button> 
+                        </Link>
                     </div>
                     <div className="right-buttons">
                         <div className="back-button">
@@ -35,4 +34,4 @@ const Auth = () => (
         </div>
     </div>
 );
-export default Auth
+export default SignIn

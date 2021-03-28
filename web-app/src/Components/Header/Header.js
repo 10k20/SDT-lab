@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.scss';
 
 function Header() {
@@ -14,9 +15,11 @@ function Header() {
     return (
         <header>
             <div className='header-wrapper'>
-                <div className='logo'>
-                    <p>Snake game</p>
-                </div>
+                    <div className='logo'>
+                        <Link to='/' className='react-link'>
+                            <p>Snake game</p>
+                        </Link>
+                    </div>
                 <div className='info'>
                     <p className='login'>login</p>
                     <p className='time'>{currentDate.getHours() + ':' + currentDate.getMinutes()}</p>
