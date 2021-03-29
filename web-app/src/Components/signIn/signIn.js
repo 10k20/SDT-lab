@@ -13,25 +13,26 @@ const SignIn = () => (
                     </div>
                         <div className="password input">
                             <label>Password: </label>
-                            <input type="text" className="reg-input" placeholder="Password" required />
+                            <input type="password" className="reg-input" placeholder="Password" autoComplete="current-password" required />
                         </div>
                 </div>
                 <div className="buttons">
                     <div className="cancel-button">
                         <Link to='/'>
-                            <button class="in-button button-not-active">Cancel</button> 
+                            <button className="in-button button-not-active">Cancel</button> 
                         </Link>
                     </div>
                     <div className="right-buttons">
                         <div className="back-button">
-                            <button class="in-button button-not-active">Back</button> 
+                            <button className="in-button button-not-active">Back</button> 
                         </div>
                         <div className="signin-button">
-                            <button class="in-button">Sign In</button> 
+                            <button className="in-button">Sign In</button> 
                         </div> 
                     </div>
                 </div>
         </div>
     </div>
 );
+
 export default SignIn

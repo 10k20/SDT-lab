@@ -13,11 +13,11 @@ const SignUp = () => (
                     </div>
                         <div className="password input">
                             <label>Password: </label>
-                            <input type="text" className="reg-input" placeholder="Password" required />
+                            <input type="password" className="reg-input" placeholder="Password" required autocomplete="current-password" />
                         </div>
                         <div className="repeat-password input">
                             <label>Password again: </label>
-                            <input type="text" className="reg-input" placeholder="Password Again" required />
+                            <input type="password" className="reg-input" placeholder="Password Again" required autocomplete="current-password" />
                         </div>
                 </div>
                 <div className="buttons">
@@ -38,4 +38,5 @@ const SignUp = () => (
         </div>
     </div>
 );
+
 export default SignUp
