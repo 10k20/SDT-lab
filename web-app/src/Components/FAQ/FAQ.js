@@ -3,7 +3,10 @@ import './FAQ.scss';
 
 const FAQ = () => (
     <div className="FAQ">
-        <div className="FAQ-wrapper"></div>
+        <div className="FAQ-wrapper">
+            <h1 className="title">FAQ</h1>
+            <div className="text">Some FAQ information</div>
+        </div>
     </div>
 );
 
