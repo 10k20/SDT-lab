@@ -22,7 +22,7 @@ function Header() {
                     </div>
                 <div className='info'>
                     <p className='login'>login</p>
-                    <p className='time'>{currentDate.getHours() + ':' + currentDate.getMinutes()}</p>
+                    <p className='time'>{('0' + currentDate.getHours()).substr(-2) + ':' + ('0' + currentDate.getMinutes()).substr(-2)}</p>
                 </div>
             </div>
         </header>
