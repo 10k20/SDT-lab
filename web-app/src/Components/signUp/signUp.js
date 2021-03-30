@@ -63,7 +63,7 @@ function SignUp() {
                                 <button class="in-button button-not-active">Back</button> 
                             </div>
                             <div className="signin-button">
-                                <button class="in-button" onClick={register}>Sign Un</button> 
+                                <button class="in-button" onClick={register}>Sign Up</button> 
                             </div> 
                         </div>
                     </div>
