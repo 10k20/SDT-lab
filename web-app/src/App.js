@@ -1,5 +1,5 @@
-import { Switch, Route } from 'react-router-dom'
-
+import { Switch, Route } from 'react-router-dom';
+import React from 'react';
 import Snake from './Components/Snake/Snake';
 import SignUp from './Components/signUp/signUp';
 import SignIn from './Components/signIn/signIn';
@@ -8,6 +8,7 @@ import MainMenu from './Components/mainMenu/mainMenu';
 import FAQ from './Components/FAQ/FAQ';
 
 function App() {
+
   return (
     <div className="App">
       <Switch>
