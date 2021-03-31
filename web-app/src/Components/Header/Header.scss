@@ -1,0 +1,25 @@
+header {
+    color: #fff;
+    position: relative;
+    backdrop-filter: blur(20px);
+    background-color: rgba(0, 0, 0, 0.1);
+    .header-wrapper {
+        padding: 0.5rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        .info {
+            display: flex;
+            justify-content: space-between;
+            .login {
+                margin-right: 1rem;
+            }
+        }
+        .logo {
+            .react-link {
+                p {
+                    color: #fff;
+                }
+            };
+        }
+    }
+}

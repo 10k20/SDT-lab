@@ -1,0 +1,46 @@
+@import '../../Assets/Colors.scss';
+
+.final-tab {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    height: 20rem;
+    width: 30rem;
+    background-color: $light-gray;
+    border-radius: 10px;
+    display: flex;
+    color: #000;
+    &-wrapper {
+        width: 100%;
+        position: relative;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .last-score {
+            margin-bottom: 5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .title {
+                font-size: 1.5rem;
+            }
+            .score {
+                margin-top: 0.5rem;
+            }
+        }
+        .login {
+            margin-bottom: 2rem;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            .play {
+                margin-left: 1rem;
+            }
+        }
+    }
+}
