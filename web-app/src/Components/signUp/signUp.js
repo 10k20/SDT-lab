@@ -5,32 +5,23 @@ import './signUp.scss';
 
 function SignUp() {
     
-    const [usersData, setUsersData] = useState('')
     const [loginReg, setLoginReg] = useState('')
     const [passwordReg, setPasswordReg] = useState('')
+    const [requestStatus, setRequestStatus] = useState('')
 
     const register = () => {
 
         Axios
-            .get('http://localhost:8000/api/users/')
-            .then((response) => {
-                setUsersData(response.data)
+            .post('http://localhost:8000/api/users/', {
+                login: loginReg,
+                password: passwordReg,
             })
-            .then(() => {
-                if (usersData.some(user => user.login === loginReg)) {
-                    console.log('User with that login exists')
-                } 
-                else {
-                    Axios
-                    .post('http://localhost:8000/api/users/', {
-                        login: loginReg,
-                        password: passwordReg,
-                    })
-                    .then((response) => {
-                        console.log(response);
-                    })
-                }
-            }) 
+            .then((response) => {
+                setRequestStatus(response.statusText);
+            })
+            .catch((error) => {
+                setRequestStatus(error.response.data.login[0]);
+            })
     }
 
     return(
