@@ -4,17 +4,33 @@ import Axios from 'axios';
 import './signUp.scss';
 
 function SignUp() {
-
+    
+    const [usersData, setUsersData] = useState('')
     const [loginReg, setLoginReg] = useState('')
     const [passwordReg, setPasswordReg] = useState('')
 
     const register = () => {
-        Axios.post('http://localhost:8000/api/users/', {
-            login: loginReg,
-            password: passwordReg,
-        }).then((response) => {
-            console.log(response);
-        })
+
+        Axios
+            .get('http://localhost:8000/api/users/')
+            .then((response) => {
+                setUsersData(response.data)
+            })
+            .then(() => {
+                if (usersData.some(user => user.login === loginReg)) {
+                    console.log('User with that login exists')
+                } 
+                else {
+                    Axios
+                    .post('http://localhost:8000/api/users/', {
+                        login: loginReg,
+                        password: passwordReg,
+                    })
+                    .then((response) => {
+                        console.log(response);
+                    })
+                }
+            }) 
     }
 
     return(
