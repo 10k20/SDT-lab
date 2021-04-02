@@ -10,10 +10,11 @@ class Record(models.Model):
     def __str__(self):
         return self.score
 
+
 class User(AbstractBaseUser):
     login = models.CharField(max_length=120, unique=True)
     password = models.CharField(max_length=120)
     records = models.ManyToManyField(Record, blank=True)
-
+    USERNAME_FIELD = "login"
     def __str__(self):
         return self.login
