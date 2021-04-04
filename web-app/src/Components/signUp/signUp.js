@@ -25,7 +25,7 @@ function SignUp() {
                 
                 if (response.status === 201) {
                     setDataStatus('Account created')
-                    setTimeout(() => history.push('/'), 1000);
+                    setTimeout(() => history.push('/authorized'), 1000);
                 }
             })
             .catch((error) => {

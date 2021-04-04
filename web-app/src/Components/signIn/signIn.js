@@ -17,7 +17,7 @@ function SignIn() {
             .then((response) => {
                 if (response.data.length !== 0) {
                     setLoginDataStatus('Logged In..')
-                    setTimeout(() => history.push('/'), 1000);         
+                    setTimeout(() => history.push('/authorized'), 1000);         
                 }
                 else {
                     setLoginDataStatus('Login or password are wrong')
