@@ -1,27 +1,39 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Axios from 'axios';
 import './signUp.scss';
 
 function SignUp() {
-    
+    const history = useHistory();
     const [loginReg, setLoginReg] = useState('')
     const [passwordReg, setPasswordReg] = useState('')
     const [requestStatus, setRequestStatus] = useState('')
+    const [dataStatus, setDataStatus] = useState('')
 
     const register = () => {
-
-        Axios
+        setDataStatus('')
+        if (passwordReg === '') {
+            setDataStatus("Write password")
+        }
+        else {
+            Axios
             .post('http://localhost:8000/api/users/', {
                 login: loginReg,
                 password: passwordReg,
             })
             .then((response) => {
-                setRequestStatus(response.statusText);
+                
+                if (response.status === 201) {
+                    setDataStatus('Account created')
+                    setTimeout(() => history.push('/'), 1000);
+                }
             })
             .catch((error) => {
-                setRequestStatus(error.response.data.login[0]);
+                if (error.response.status === 400) {
+                    setDataStatus('Login already exists')
+                }
             })
+        }
     }
 
     return(
@@ -48,29 +60,30 @@ function SignUp() {
                                     className="reg-input" 
                                     placeholder="Password" 
                                     required 
-                                    autocomplete="current-password" 
+                                    autoComplete="current-password" 
                                     onChange={(e) => {
                                         setPasswordReg(e.target.value)
                                     }}
                                 />
                             </div>
-                            <div className="repeat-password input">
-                                <label>Password again: </label>
-                                <input type="password" className="reg-input" placeholder="Password Again" autocomplete="current-password" />
-                            </div>
                     </div>
+                    <h6 className="sign-up-status">
+                        { dataStatus }
+                    </h6>
                     <div className="buttons">
                         <div className="cancel-button">
                             <Link to='/'>
-                                <button class="in-button button-not-active">Cancel</button> 
+                                <button className="in-button button-not-active">Cancel</button> 
                             </Link>
                         </div>
                         <div className="right-buttons">
                             <div className="back-button">
-                                <button class="in-button button-not-active">Back</button> 
+                                <Link to='/sign-in'>
+                                    <button className="in-button button-not-active">Sign In</button> 
+                                </Link>
                             </div>
                             <div className="signin-button">
-                                <button class="in-button" onClick={register}>Sign Up</button> 
+                                <button className="in-button" onClick={register}>Confirm</button> 
                             </div> 
                         </div>
                     </div>

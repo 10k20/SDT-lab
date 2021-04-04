@@ -26,6 +26,10 @@
                 }
             }
         }
+        .sign-up-status {
+            margin-bottom: 1rem;
+            color: $error;
+        }
         .buttons{
             display:flex;
             justify-content: space-between;

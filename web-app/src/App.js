@@ -5,6 +5,7 @@ import SignUp from './Components/signUp/signUp';
 import SignIn from './Components/signIn/signIn';
 import FinalTab from './Components/finalTab/finalTab';
 import MainMenu from './Components/mainMenu/mainMenu';
+import MainMenuAuthorized from './Components/mainMenuAuthorized/mainMenuAuthorized';
 import FAQ from './Components/FAQ/FAQ';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route exact path='/sign-in' component={SignIn} />
         <Route exact path='/faq' component={FAQ} />
         <Route exact path='/final' component={FinalTab} />
+        <Route exact path='/authorized' component={MainMenuAuthorized} />
       </Switch>
     </div>
   );

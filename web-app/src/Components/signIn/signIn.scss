@@ -19,11 +19,22 @@
                 display: flex;
                 align-items: center;
                 justify-content: flex-end;
-                margin-bottom: 1.25rem;
+                margin-bottom: 1.5rem;
                 input {
                     width: 17.5rem;
                     margin-left: 0.75rem;
                 }
+            }
+        }
+        .sign-in-status {
+            margin-bottom: 1rem;
+            color: $error;
+        }
+        h6 {
+            margin-bottom: 1.5rem;
+            a {
+                color: $base-blue;
+                text-decoration: none;
             }
         }
         .buttons{
@@ -31,9 +42,6 @@
             justify-content: space-between;
             .right-buttons {
                 display: flex;
-                .back-button{
-                    margin-right: 1rem;
-                }
             }
         }
     }   

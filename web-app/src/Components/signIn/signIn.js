@@ -1,11 +1,29 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import Axios from 'axios';
 import './signIn.scss';
 
 function SignIn() {
+    
+    const history = useHistory()
+    const [usernameLogin, setUsernameLogin] = useState('')
+    const [passwordLogin, setPasswordLogin] = useState('')
+    const [loginDataStatus, setLoginDataStatus] = useState('')
 
-    const [usernameReg, setUsernameReg] = useState('')
-    const [passwordReg, setPasswordReg] = useState('')
+    const login = () => {
+        setLoginDataStatus('')
+        Axios
+            .get(`http://localhost:8000/api/users/?login=${usernameLogin}&password=${passwordLogin}`)
+            .then((response) => {
+                if (response.data.length !== 0) {
+                    setLoginDataStatus('Logged In..')
+                    setTimeout(() => history.push('/'), 1000);         
+                }
+                else {
+                    setLoginDataStatus('Login or password are wrong')
+                }
+            })
+    }
 
     return (
         <div className='sign-in-component'>
@@ -20,7 +38,7 @@ function SignIn() {
                                 placeholder="Login" 
                                 required 
                                 onChange={(e) => {
-                                    setUsernameReg(e.target.value)
+                                    setUsernameLogin(e.target.value)
                                 }}
                             />
                         </div>
@@ -33,10 +51,16 @@ function SignIn() {
                                 autoComplete="current-password" 
                                 required
                                 onChange={(e) => {
-                                    setPasswordReg(e.target.value)
+                                    setPasswordLogin(e.target.value)
                                 }} 
                             />
                             </div>
+                    </div>
+                    <h6 className="sign-in-status">
+                        { loginDataStatus }
+                    </h6>
+                    <div className="no-account">
+                        <h6>Don't have accout yet? <Link to="/sign-up">Sign up..</Link></h6>
                     </div>
                     <div className="buttons">
                         <div className="cancel-button">
@@ -45,11 +69,8 @@ function SignIn() {
                             </Link>
                         </div>
                         <div className="right-buttons">
-                            <div className="back-button">
-                                <button className="in-button button-not-active">Back</button> 
-                            </div>
                             <div className="signin-button">
-                                <button className="in-button">Sign In</button> 
+                                <button className="in-button" onClick={login}>Sign In</button> 
                             </div> 
                         </div>
                     </div>
