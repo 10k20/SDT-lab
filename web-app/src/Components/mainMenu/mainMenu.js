@@ -5,11 +5,9 @@ import './mainMenu.scss';
 const MainMenu = () => (
     <div className='main-menu'>
         <div className='main-menu-wrapper'>
-            <Link to='/play' className='react-link'>
-                <div className='play menu-item'>
-                    <span>Play</span>
-                </div>
-            </Link>
+            <div className='play menu-item disabled'>
+                <span>Play</span>
+            </div>
             <Link to='/' className='react-link'>
                 <div className='score menu-item'>
                     <span>Scores</span>

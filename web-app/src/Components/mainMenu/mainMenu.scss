@@ -60,9 +60,16 @@
             .sign-in:hover {
                 border-top-left-radius: 0;
                 border-top-right-radius: 0;
+                border-bottom-right-radius: 10px;
                 background-color: $base-blue-hover;
             }
         }
-        
+        .disabled {
+            color: $text-light-color;
+            background-color: $medium-gray;
+            cursor: default !important;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }  
     }
 }
