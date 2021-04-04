@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import Axios from 'axios';
 import './signUp.scss';
+import { setAuthLogin } from '../../Store/Actions';
 
-function SignUp() {
+const SignUp = (props) => {
+    console.log(props)
     const history = useHistory();
     const [loginReg, setLoginReg] = useState('')
     const [passwordReg, setPasswordReg] = useState('')
-    const [requestStatus, setRequestStatus] = useState('')
     const [dataStatus, setDataStatus] = useState('')
 
     const register = () => {
@@ -22,7 +23,6 @@ function SignUp() {
                 password: passwordReg,
             })
             .then((response) => {
-                
                 if (response.status === 201) {
                     setDataStatus('Account created')
                     setTimeout(() => history.push('/authorized'), 1000);
@@ -35,7 +35,7 @@ function SignUp() {
             })
         }
     }
-
+    props.setAuthLogin('10k20')
     return(
         <div className='sign-up-component'>
             <div className='sign-up-wrapper'>
