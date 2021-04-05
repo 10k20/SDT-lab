@@ -14,9 +14,38 @@
         flex-direction: column;
         justify-content: center;
         padding: 1.5rem;
-        .title {
-            margin-bottom: 1rem;
-            text-align: center;
-        }  
+        max-height: 26rem;
+        &-content {
+            overflow:auto;
+            padding: 0 1rem;
+            .title {
+                margin-bottom: 1rem;
+                text-align: center;
+            } 
+            .scores-tab {
+                .first-line {
+                    color: $text-light-color;
+                }
+                .scores-line {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 2.5rem;
+                    border-bottom: 1px solid $medium-gray;
+                }
+                .scores-line:last-child {
+                    border-bottom: none;
+                }
+                .record-line:nth-child(2) {
+                    color: rgb(212, 162, 69);
+                }
+                .record-line:nth-child(3) {
+                    color: rgb(143, 139, 131);
+                }
+                .record-line:nth-child(4) {
+                    color: rgb(212, 121, 69);
+                }
+            }
+        } 
     }   
 }

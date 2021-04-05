@@ -5,10 +5,10 @@ from django.contrib.auth.models import AbstractBaseUser
 
 class Record(models.Model):
     user_login = models.ForeignKey("User",null=True, on_delete=models.CASCADE)
-    score = models.CharField(max_length=120)
+    score = models.IntegerField()
 
     def __str__(self):
-        return self.score
+        return str(self.score)
 
 
 class User(AbstractBaseUser):

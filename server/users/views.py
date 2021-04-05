@@ -9,7 +9,7 @@ from .serializers import UserSerializer, RecordSerializer
 
 class RecordViewSet(viewsets.ModelViewSet):
     serializer_class = RecordSerializer
-    queryset = Record.objects.all()
+    queryset = Record.objects.all().order_by('-score')
 
 class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
