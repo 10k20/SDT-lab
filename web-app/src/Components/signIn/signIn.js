@@ -3,21 +3,24 @@ import { Link, useHistory } from 'react-router-dom';
 import Axios from 'axios';
 import './signIn.scss';
 
-function SignIn() {
+const SignIn = (props) => {
     
     const history = useHistory()
-    const [usernameLogin, setUsernameLogin] = useState('')
-    const [passwordLogin, setPasswordLogin] = useState('')
     const [loginDataStatus, setLoginDataStatus] = useState('')
 
-    const login = () => {
-        setLoginDataStatus('')
+    const login = (event) => {
+        event.preventDefault();
+        let usernameLogin = event.target.elements.login.value
+        let usernamePassword = event.target.elements.password.value
+
         Axios
-            .get(`http://localhost:8000/api/users/?login=${usernameLogin}&password=${passwordLogin}`)
+            .get(`http://localhost:8000/api/users/?login=${usernameLogin}&password=${usernamePassword}`)
             .then((response) => {
                 if (response.data.length !== 0) {
-                    setLoginDataStatus('Logged In..')
-                    setTimeout(() => history.push('/authorized'), 1000);         
+                    setLoginDataStatus('Success..')
+                    props.setAuthLogin(usernameLogin)
+                    props.setAuthStatus(true)
+                    history.push('/')       
                 }
                 else {
                     setLoginDataStatus('Login or password are wrong')
@@ -27,7 +30,7 @@ function SignIn() {
 
     return (
         <div className='sign-in-component'>
-            <div className='sign-in-wrapper'>
+            <form className='sign-in-wrapper' onSubmit={login}>
                 <span className="info-requirement">Введите данные для входа </span> 
                     <div className="inputs">
                         <div className="login input">
@@ -37,9 +40,7 @@ function SignIn() {
                                 className="reg-input" 
                                 placeholder="Login" 
                                 required 
-                                onChange={(e) => {
-                                    setUsernameLogin(e.target.value)
-                                }}
+                                name='login'
                             />
                         </div>
                             <div className="password input">
@@ -50,9 +51,7 @@ function SignIn() {
                                 placeholder="Password" 
                                 autoComplete="current-password" 
                                 required
-                                onChange={(e) => {
-                                    setPasswordLogin(e.target.value)
-                                }} 
+                                name='password'
                             />
                             </div>
                     </div>
@@ -65,16 +64,16 @@ function SignIn() {
                     <div className="buttons">
                         <div className="cancel-button">
                             <Link to='/'>
-                                <button className="in-button button-not-active">Cancel</button> 
+                                <button className="in-button button button-not-active">Cancel</button> 
                             </Link>
                         </div>
                         <div className="right-buttons">
                             <div className="signin-button">
-                                <button className="in-button" onClick={login}>Sign In</button> 
+                                <input type="submit" className="in-button button" value="Sign In"/> 
                             </div> 
                         </div>
                     </div>
-            </div>
+            </form>
         </div>
     )
 };
