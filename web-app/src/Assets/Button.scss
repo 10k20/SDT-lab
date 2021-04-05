@@ -1,4 +1,4 @@
-button {
+.button {
     background: $base-blue;
     border: 1px solid $medium-gray;
     color: #fff;
@@ -7,7 +7,7 @@ button {
     border-radius: 2rem;
     cursor: pointer;
 }
-button:hover {
+.button:hover {
     background: $base-blue-hover;
 }
 .button-not-active {

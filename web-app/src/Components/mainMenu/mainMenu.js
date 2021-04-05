@@ -8,7 +8,7 @@ const MainMenu = () => (
             <div className='play menu-item disabled'>
                 <span>Play</span>
             </div>
-            <Link to='/' className='react-link'>
+            <Link to='/scores' className='react-link'>
                 <div className='score menu-item'>
                     <span>Scores</span>
                 </div>
