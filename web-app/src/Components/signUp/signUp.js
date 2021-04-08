@@ -7,8 +7,6 @@ import { setAuthLogin } from '../../Store/Actions';
 const SignUp = (props) => {
     console.log(props)
     const history = useHistory();
-    const [loginReg, setLoginReg] = useState('')
-    const [passwordReg, setPasswordReg] = useState('')
     const [dataStatus, setDataStatus] = useState('')
 
     const register = (event) => {
@@ -47,7 +45,8 @@ const SignUp = (props) => {
                                 className="reg-input" 
                                 name="login"
                                 placeholder="Login" 
-                                required 
+                                required
+                                autoComplete="username"
                             />
                         </div>
                             <div className="password input">
@@ -58,7 +57,7 @@ const SignUp = (props) => {
                                     className="reg-input" 
                                     placeholder="Password" 
                                     required 
-                                    autoComplete="current-password" 
+                                    autoComplete="new-password" 
                                 />
                             </div>
                     </div>

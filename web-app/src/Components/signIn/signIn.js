@@ -40,7 +40,8 @@ const SignIn = (props) => {
                                 className="reg-input" 
                                 placeholder="Login" 
                                 required 
-                                name='login'
+                                name="login"
+                                autoComplete="username"
                             />
                         </div>
                             <div className="password input">
