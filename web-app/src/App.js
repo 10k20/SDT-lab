@@ -18,38 +18,30 @@ const App = (props) => {
           <Header 
             login={props.login} 
             authorized={props.authorized} 
-            setAuthLogin={props.setAuthLogin} 
-            setAuthStatus={props.setAuthStatus}
           />
           <Switch>
             <Route exact path='/' component={() => props.authorized ? <MainMenuAuthorized
-              login={props.login} 
-              authorized={props.authorized} 
               setAuthLogin={props.setAuthLogin} 
               setAuthStatus={props.setAuthStatus}
             />
             :
-            <MainMenu
-              login={props.login} 
-              authorized={props.authorized} 
-              setAuthLogin={props.setAuthLogin} 
-              setAuthStatus={props.setAuthStatus}
-            />
+            <MainMenu/>
             }
             />
-            <Route exact path='/play' component={Snake} />
-            <Route exact path='/sign-up' component={() => 
-              <SignUp 
+            <Route exact path='/play' component={() => 
+              <Snake
                 login={props.login} 
-                authorized={props.authorized} 
+                authorized={props.authorized}
+              />} 
+            />
+            <Route exact path='/sign-up' component={() => 
+              <SignUp  
                 setAuthLogin={props.setAuthLogin} 
                 setAuthStatus={props.setAuthStatus}
               />} 
             />
             <Route exact path='/sign-in' component={() => 
               <SignIn
-                login={props.login} 
-                authorized={props.authorized} 
                 setAuthLogin={props.setAuthLogin} 
                 setAuthStatus={props.setAuthStatus}
               />}  

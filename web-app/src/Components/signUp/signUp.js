@@ -1,8 +1,7 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import Axios from 'axios';
 import './signUp.scss';
-import { setAuthLogin } from '../../Store/Actions';
 
 const SignUp = (props) => {
     console.log(props)
