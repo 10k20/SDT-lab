@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+import { Router, Redirect } from 'react-router';
+import { Link, Route } from 'react-router-dom';
+import { setLastScore } from '../../Store/Actions';
 import './Snake.scss'
+import SnakeReloadButton from './SnakeReloadButton';
 
 export default class Game extends Component {
   state = {
@@ -160,7 +164,8 @@ export default class Game extends Component {
       }
 
       const grid = this.resetGrid(newState, true);
-      const score = newState.snake.tail.length * newState.scoreFactor;
+      this.props.setLastScore(newState.snake.tail.length * newState.scoreFactor)
+      const score = newState.snake.tail.length * newState.scoreFactor
 
       return {
         ...newState,
@@ -212,7 +217,6 @@ export default class Game extends Component {
   }
 
   componentDidMount() {
-
     document.body.addEventListener('keydown', this.handleKeyPress);
 
     this.setState((state) => {
@@ -232,7 +236,6 @@ export default class Game extends Component {
     });
 
     this.resetGrid();
-
     // Set tick
     window.fnInterval = setInterval(() => {
       this.gameTick();
@@ -243,8 +246,9 @@ export default class Game extends Component {
     document.body.removeEventListener('keydown', this.handleKeyPress);
     clearInterval(window.fnInterval);
   }
-
+  
   render() {
+    console.log(this.props.lastScore)
     let gridContent = this.state.grid.map((grid) => {
       return <div
         key={grid.row.toString() + '-' + grid.col.toString()}
@@ -258,14 +262,27 @@ export default class Game extends Component {
     if (this.state.die) {
       gridContent = <div className="grid-message">
         <h1>Game Over</h1>
-      </div>;
-    };
-    return (
-      <div className="snake-container wrapper">
-        <div className="grid-header">
-          <h1>Your score: {this.state.score}</h1>
+        <div className="snake-buttons">
+          <Link to='/'>
+            <button  className="snake-buttons-go-menu button button-not-active">Main menu</button>
+          </Link>
+          <SnakeReloadButton />
         </div>
-        <div className="grid">{gridContent}</div>
+      </div>;
+    //   Axios
+    //   .post('http://localhost:8000/api/users/', {
+    //       login: loginReg,
+    //       password: passwordReg,
+    //   })
+    // };
+    return (
+      <div className="snake-container">
+        <div className="snake-container-wrapper">
+          <div className="grid-header">
+            <h1>Your score: {this.state.score}</h1>
+          </div>
+          <div className="grid">{gridContent}</div>
+        </div>
       </div>
     );
   }

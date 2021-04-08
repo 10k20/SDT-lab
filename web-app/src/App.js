@@ -31,8 +31,11 @@ const App = (props) => {
             <Route exact path='/play'
               render={() => (
                 props.login ? (
-                  <Snake login={props.login} 
-                  authorized={props.authorized}/>
+                  <Snake 
+                  login={props.login} 
+                  authorized={props.authorized}
+                  lastScore={props.lastScore}
+                  setLastScore={props.setLastScore}/>
                 ) : (
                   <Redirect to="/"/>
                 )

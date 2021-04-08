@@ -1,29 +1,60 @@
 @import './../../Assets/Colors.scss';
 
 .snake-container {
-    width: 100vw;
-    /* height: 100vh; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  
-  .grid {
-    width: 500px;
-    height: 500px;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background-color: $light-gray;
-    border-radius: 10px;
-    .grid-message {
-        width: 100%;
-        text-align: center;
+  width: 100vw;
+  height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  &-wrapper {
+    .grid-header {
+      height: 50px;
+      background-color: $light-gray;
+      width: 100%;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid $medium-gray;
+    }
+    .grid {
+      width: 500px;
+      height: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      background-color: $light-gray;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      .grid-message {
+          width: 100%;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .snake-buttons {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: fit-content;
+            &-go-menu {
+              margin-right: 0.5rem;
+            }
+          }
+      }
+      
     }
   }
-  
+}
   .gridItem {
     width: 20px;
     height: 20px;
