@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractBaseUser
 # Create your models here.
 
 class Record(models.Model):
-    user_login = models.ForeignKey("User",null=True, on_delete=models.CASCADE)
+    user_login = models.CharField(max_length=120)
     score = models.IntegerField()
 
     def __str__(self):
