@@ -1,4 +1,4 @@
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import React from 'react';
 import Header from './Components/Header/Header';
 import Snake from './Components/Snake/Snake';
@@ -28,11 +28,15 @@ const App = (props) => {
             <MainMenu/>
             }
             />
-            <Route exact path='/play' component={() => 
-              <Snake
-                login={props.login} 
-                authorized={props.authorized}
-              />} 
+            <Route exact path='/play'
+              render={() => (
+                props.login ? (
+                  <Snake login={props.login} 
+                  authorized={props.authorized}/>
+                ) : (
+                  <Redirect to="/"/>
+                )
+              )}
             />
             <Route exact path='/sign-up' component={() => 
               <SignUp  
