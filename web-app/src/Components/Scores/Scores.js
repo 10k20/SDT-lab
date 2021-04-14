@@ -15,7 +15,7 @@ const Scores = () => {
                 console.log('there are no records')
             }
         })
-    })
+    }, [])
     return(
         <div className="Scores">
             <div className="Scores-wrapper">
@@ -28,7 +28,7 @@ const Scores = () => {
                             <div className="score">Score</div>
                         </div>
                         {userRecords.map((record, index) => 
-                            <div className="record-line scores-line">
+                            <div className="record-line scores-line" key={record.id}>
                                 <div className="id">{index + 1}</div>
                                 <div className="login">{record.user_login}</div>
                                 <div className="score">{record.score}</div>

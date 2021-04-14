@@ -163,7 +163,6 @@ export default class Game extends Component {
       }
 
       const grid = this.resetGrid(newState, true);
-      this.props.setLastScore(newState.snake.tail.length * newState.scoreFactor)
       const score = newState.snake.tail.length * newState.scoreFactor
 
       return {
@@ -249,9 +248,6 @@ export default class Game extends Component {
       .post('http://localhost:8000/api/records/', {
           user_login: this.props.login,
           score: this.state.score,
-      })
-      .then((response) => {
-        console.log(response)
       })
     }
   }

@@ -12,7 +12,7 @@ import FAQ from './Components/FAQ/FAQ';
 
 
 const App = (props) => {
-  console.log(props)
+  // console.log(props)
   return (
       <div className="App"> 
           <Header 
@@ -33,9 +33,7 @@ const App = (props) => {
                 props.login ? (
                   <Snake 
                   login={props.login} 
-                  authorized={props.authorized}
-                  lastScore={props.lastScore}
-                  setLastScore={props.setLastScore}/>
+                  authorized={props.authorized}/>
                 ) : (
                   <Redirect to="/"/>
                 )

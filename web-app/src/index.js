@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import { createStore } from 'redux';
 import { rootReducer } from './Store/Reducers'
 import { Provider, connect } from 'react-redux';
-import { setAuthLogin, setAuthStatus, setLastScore } from './Store/Actions'
+import { setAuthLogin, setAuthStatus } from './Store/Actions'
 
 
 const store = createStore(rootReducer);
@@ -16,15 +16,13 @@ const store = createStore(rootReducer);
 const mapStateToProps = (state) => {
   return {
     login: state.login,
-    authorized: state.authorized,
-    lastScore: state.lastScore
+    authorized: state.authorized
   }
 }
 
 const mapDispatchToProps = {
   setAuthLogin,
-  setAuthStatus,
-  setLastScore
+  setAuthStatus
 }
 
 const WrappedApp = connect(mapStateToProps, mapDispatchToProps)(App)

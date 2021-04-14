@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Header.scss';
 
 function Header(props) {
-    const [time, setTime] = useState(Date.now());
+    const [,setTime] = useState(Date.now());
     var currentDate = new Date();
     useEffect(() => {
       const interval = setInterval(() => setTime(Date.now()), 5000);
