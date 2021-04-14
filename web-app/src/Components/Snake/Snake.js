@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Router, Redirect } from 'react-router';
-import { Link, Route } from 'react-router-dom';
-import { setLastScore } from '../../Store/Actions';
+import { Link } from 'react-router-dom';
 import './Snake.scss'
+import Axios from 'axios'
 import SnakeReloadButton from './SnakeReloadButton';
 
 export default class Game extends Component {
@@ -245,10 +244,19 @@ export default class Game extends Component {
   componentWillUnmount() {
     document.body.removeEventListener('keydown', this.handleKeyPress);
     clearInterval(window.fnInterval);
+    if (this.state.score !== 0) {
+      Axios
+      .post('http://localhost:8000/api/records/', {
+          user_login: this.props.login,
+          score: this.state.score,
+      })
+      .then((response) => {
+        console.log(response)
+      })
+    }
   }
   
   render() {
-    console.log(this.props.lastScore)
     let gridContent = this.state.grid.map((grid) => {
       return <div
         key={grid.row.toString() + '-' + grid.col.toString()}
@@ -269,12 +277,7 @@ export default class Game extends Component {
           <SnakeReloadButton />
         </div>
       </div>;
-    //   Axios
-    //   .post('http://localhost:8000/api/users/', {
-    //       login: loginReg,
-    //       password: passwordReg,
-    //   })
-    // };
+    };
     return (
       <div className="snake-container">
         <div className="snake-container-wrapper">

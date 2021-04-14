@@ -32,6 +32,17 @@
                     align-items: center;
                     height: 2.5rem;
                     border-bottom: 1px solid $medium-gray;
+                    .id {
+                        width: 15%;
+                    }
+                    .login {
+                        width: 33%;
+                        text-align: center;
+                    }
+                    .score {
+                        width: 20%;
+                        text-align: right;
+                    }
                 }
                 .scores-line:last-child {
                     border-bottom: none;
