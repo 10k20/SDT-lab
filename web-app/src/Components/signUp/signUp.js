@@ -4,7 +4,6 @@ import Axios from 'axios';
 import './signUp.scss';
 
 const SignUp = (props) => {
-    console.log(props)
     const history = useHistory();
     const [dataStatus, setDataStatus] = useState('')
 
