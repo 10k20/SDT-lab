@@ -42,6 +42,8 @@ const SignIn = (props) => {
                                 required 
                                 name="login"
                                 autoComplete="username"
+                                maxLength="20"
+                                minLength="4"
                             />
                         </div>
                             <div className="password input">
@@ -53,6 +55,8 @@ const SignIn = (props) => {
                                 autoComplete="current-password" 
                                 required
                                 name='password'
+                                maxLength="32"
+                                minLength="8"
                             />
                             </div>
                     </div>

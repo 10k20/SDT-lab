@@ -46,6 +46,8 @@ const SignUp = (props) => {
                                 placeholder="Login" 
                                 required
                                 autoComplete="username"
+                                maxLength="20"
+                                minLength="4"
                             />
                         </div>
                             <div className="password input">
@@ -57,6 +59,8 @@ const SignUp = (props) => {
                                     placeholder="Password" 
                                     required 
                                     autoComplete="new-password" 
+                                    maxLength="32"
+                                    minLength="8"
                                 />
                             </div>
                     </div>
