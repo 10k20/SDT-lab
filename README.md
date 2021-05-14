@@ -1,16 +1,19 @@
 # React Snake Game
 ## Get Started:
 ### Start server:
-Install all python dependencies:
+1. Install all python dependencies:
 `pip install -r requirements.txt`
 
-Create migrations for database:
+2. Create migrations for database:
 `python manage.py makemigrations`
 
-Push them to database:
+3. Create migrations for users module:
+`python manage.py makemigrations users`
+
+4. Push them to database:
 `python manage.py migrate`
 
-Run server:
+5. Run server:
 `python manage.py runserver`
 
 Now the server is ready to accept connections
@@ -21,10 +24,10 @@ Create super user for Django admin:
 
 ### Start web-app:
 
-Install all node modules:
+1. Install all node modules:
 `npm i`
 
-Run web-app in development build:
+2. Run web-app in development build:
 `npm run start`
 
 ### Additional:
