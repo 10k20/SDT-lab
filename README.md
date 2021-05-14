@@ -7,6 +7,9 @@ Install all python dependencies:
 Create migrations for database:
 `python manage.py makemigrations`
 
+Create migrations for users module:
+`python manage.py makemigrations users`
+
 Push them to database:
 `python manage.py migrate`
 
